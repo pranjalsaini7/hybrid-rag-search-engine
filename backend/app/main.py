@@ -15,6 +15,8 @@ Initializes all services on startup:
 
 All components are held as module-level singletons accessed by
 routers via lazy imports.
+"""
+
 import os
 # Memory optimization: force PyTorch/CPU libraries to use a single thread to avoid allocating large pools
 os.environ["OMP_NUM_THREADS"] = "1"
