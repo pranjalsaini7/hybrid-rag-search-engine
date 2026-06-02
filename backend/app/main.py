@@ -17,6 +17,8 @@ All components are held as module-level singletons accessed by
 routers via lazy imports.
 """
 
+from __future__ import annotations
+
 import os
 # Memory optimization: force PyTorch/CPU libraries to use a single thread to avoid allocating large pools
 os.environ["OMP_NUM_THREADS"] = "1"
@@ -30,8 +32,6 @@ try:
     torch.set_num_threads(1)
 except ImportError:
     pass
-
-from __future__ import annotations
 
 import logging
 from contextlib import asynccontextmanager
