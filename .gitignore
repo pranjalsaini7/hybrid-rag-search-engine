@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment files
+.env
+
+# Data directories (keep structure, ignore contents)
+backend/data/chroma_db/*
+backend/data/uploads/*
+backend/data/eval_sets/*
+!backend/data/chroma_db/.gitkeep
+!backend/data/uploads/.gitkeep
+!backend/data/eval_sets/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (frontend — future phases)
+node_modules/
+frontend/dist/
+
+# Docker
+*.log

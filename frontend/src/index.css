@@ -1,0 +1,87 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   RAG Assistant — Global Styles Revamp (Warm Terracotta & Peach Theme)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fdf8f4; /* Warm off-white page background */
+  color: #3d2e28;            /* Warm charcoal text */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: #140f0d; /* Warm dark-charcoal background */
+  color: #ebdcd5;            /* Warm light-beige text */
+}
+
+.glass-panel {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-size: 20px;
+  user-select: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e8d9cf; /* Warm beige scrollbar */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c4b5a9;
+}
+
+/* Specific override for the 1px borders mentioned in guidance */
+.border-premium {
+  border: 1px solid #e8d9cf; /* Warm beige borders */
+}
+
+.sidebar-active-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #c9856a; /* Dusty rose / terracotta indicator */
+}
+
+/* Scrollbar styles for standard browser scrolling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8d9cf; /* Warm beige scrollbar */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4b5a9;
+}
