@@ -179,7 +179,7 @@ app.include_router(evaluation.router)
 
 @app.get("/health")
 async def health():
-    """Quick health check — confirms the server is running."""
+    """Quick health check - confirms the server is running."""
     return {
         "status": "healthy",
         "model": settings.OLLAMA_MODEL,
