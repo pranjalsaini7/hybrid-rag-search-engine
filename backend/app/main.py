@@ -15,7 +15,19 @@ Initializes all services on startup:
 
 All components are held as module-level singletons accessed by
 routers via lazy imports.
-"""
+import os
+# Memory optimization: force PyTorch/CPU libraries to use a single thread to avoid allocating large pools
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+os.environ["VECLIB_MAXIMUM_THREADS"] = "1"
+os.environ["NUMEXPR_NUM_THREADS"] = "1"
+
+try:
+    import torch
+    torch.set_num_threads(1)
+except ImportError:
+    pass
 
 from __future__ import annotations
 
@@ -92,8 +104,11 @@ async def lifespan(app: FastAPI):
 
     # 5. Reranker
     reranker = Reranker()
-    _ = reranker.model  # Pre-load
-    logger.info("✅  Reranker ready.")
+    if not settings.DISABLE_RERANKER:
+        _ = reranker.model  # Pre-load
+        logger.info("✅  Reranker ready.")
+    else:
+        logger.info("✅  Reranker ready (disabled/bypassed for RAM optimization).")
 
     # 6. Hybrid retriever
     hybrid_retriever = HybridRetriever(vector_store, bm25_store)

@@ -70,6 +70,7 @@ class Settings(BaseSettings):
     GROQ_API_KEY: str | None = None
     PINECONE_API_KEY: str | None = None
     PINECONE_INDEX_NAME: str = "rag-assistant"
+    DISABLE_RERANKER: bool = False
 
     # ── Derived helpers (not env-configurable) ──────────────────────────
     def ensure_directories(self) -> None:

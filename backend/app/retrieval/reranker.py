@@ -18,7 +18,6 @@ import logging
 from typing import List
 
 from langchain_core.documents import Document
-from sentence_transformers import CrossEncoder
 
 from app.config import settings
 
@@ -30,13 +29,16 @@ class Reranker:
 
     def __init__(self, model_name: str | None = None) -> None:
         self._model_name = model_name or settings.RERANKER_MODEL
-        self._model: CrossEncoder | None = None
+        self._model = None
 
     @property
-    def model(self) -> CrossEncoder:
+    def model(self):
         """Lazy-load the cross-encoder model."""
         if self._model is None:
+            if settings.DISABLE_RERANKER:
+                raise RuntimeError("Reranker is disabled in configuration.")
             logger.info("Loading reranker: %s …", self._model_name)
+            from sentence_transformers import CrossEncoder
             self._model = CrossEncoder(self._model_name)
             logger.info("Reranker loaded.")
         return self._model
@@ -57,6 +59,14 @@ class Reranker:
 
         if not documents:
             return []
+
+        if settings.DISABLE_RERANKER:
+            logger.info("Reranker is disabled. Bypassing reranking step.")
+            # Ensure relevance_score is present in metadata to prevent any frontend or guard crashes
+            for doc in documents:
+                if "relevance_score" not in doc.metadata:
+                    doc.metadata["relevance_score"] = 1.0
+            return documents[:top_k]
 
         # Build (query, chunk) pairs for the cross-encoder
         pairs = [(query, doc.page_content) for doc in documents]
