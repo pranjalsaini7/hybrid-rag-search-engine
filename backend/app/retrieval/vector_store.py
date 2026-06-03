@@ -1,8 +1,8 @@
 """
-Vector Store — Dual-Mode (ChromaDB / Pinecone) Wrapper
+Vector Store -- Dual-Mode (ChromaDB / Pinecone) Wrapper
 
 Provides a persistent vector store backed by ChromaDB (locally) or Pinecone (in the cloud)
-with HuggingFace sentence-transformer embeddings.
+with embeddings from fastembed (ONNX, lightweight) or HuggingFace sentence-transformers.
 """
 
 from __future__ import annotations
@@ -11,32 +11,52 @@ import logging
 from typing import List
 
 from langchain_core.documents import Document
-from langchain_huggingface import HuggingFaceEmbeddings
 
 from app.config import settings
 
 logger = logging.getLogger(__name__)
 
 
+def _create_embeddings(model_name: str):
+    """Create an embeddings instance using fastembed (ONNX) or HuggingFace (PyTorch).
+
+    fastembed is preferred for cloud deployment because it uses ONNX Runtime
+    (~150 MB RAM) instead of PyTorch (~500 MB RAM).
+    """
+    # fastembed needs full HF path (e.g. "sentence-transformers/all-MiniLM-L6-v2")
+    fastembed_name = model_name
+    if "/" not in model_name:
+        fastembed_name = f"sentence-transformers/{model_name}"
+
+    try:
+        from langchain_community.embeddings import FastEmbedEmbeddings
+        logger.info("Using FastEmbed (ONNX) for embeddings: %s", fastembed_name)
+        return FastEmbedEmbeddings(model_name=fastembed_name)
+    except (ImportError, Exception) as e:
+        logger.info("FastEmbed not available (%s), falling back to HuggingFace.", e)
+        from langchain_huggingface import HuggingFaceEmbeddings
+        return HuggingFaceEmbeddings(
+            model_name=model_name,
+            model_kwargs={"device": "cpu"},
+            encode_kwargs={"normalize_embeddings": True},
+        )
+
+
 class VectorStore:
     """Thin wrapper around Chroma/Pinecone with lifecycle management."""
 
     def __init__(self) -> None:
-        self._embeddings: HuggingFaceEmbeddings | None = None
+        self._embeddings = None
         self._store = None
 
     @property
-    def embeddings(self) -> HuggingFaceEmbeddings:
+    def embeddings(self):
         """Lazy-load the embedding model (heavy first-time download)."""
         if self._embeddings is None:
             logger.info(
-                "Loading embedding model: %s …", settings.EMBEDDING_MODEL
+                "Loading embedding model: %s ...", settings.EMBEDDING_MODEL
             )
-            self._embeddings = HuggingFaceEmbeddings(
-                model_name=settings.EMBEDDING_MODEL,
-                model_kwargs={"device": "cpu"},
-                encode_kwargs={"normalize_embeddings": True},
-            )
+            self._embeddings = _create_embeddings(settings.EMBEDDING_MODEL)
             logger.info("Embedding model loaded.")
         return self._embeddings
 

@@ -19,7 +19,6 @@ from typing import List
 
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_ollama import ChatOllama
 
 from app.config import settings
 
@@ -61,6 +60,7 @@ class HallucinationGuard:
                     max_tokens=512,
                 )
             else:
+                from langchain_ollama import ChatOllama
                 self._llm = ChatOllama(
                     model=settings.OLLAMA_MODEL,
                     base_url=settings.OLLAMA_BASE_URL,
