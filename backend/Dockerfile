@@ -5,6 +5,8 @@ FROM python:3.11-slim
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUTF8=1 \
+    LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
     PORT=8000
 
 # Set working directory
