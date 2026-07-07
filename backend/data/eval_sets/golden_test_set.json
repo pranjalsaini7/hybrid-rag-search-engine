@@ -1,0 +1,222 @@
+[
+  {
+    "question": "What are the company's operating hours on weekdays?",
+    "ground_truth": "9 a.m. to 7 p.m.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What happens to an employee's health plan premiums during family care, medical, or military family leave?",
+    "ground_truth": "The employee must continue to pay his or her share of the health plan premiums during the leave.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What should employees do if they sustain a work-related injury or illness?",
+    "ground_truth": "Inform their supervisor immediately.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "How many calendar days does an employee have to provide recertification after a request from [ORGANIZATION]?",
+    "ground_truth": "15",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "Do employees need to satisfy all requirements before taking family care, medical, or military family leave?",
+    "ground_truth": "Yes",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What is the purpose of the introduction section in the employee handbook?",
+    "ground_truth": "To welcome employees to [ORGANIZATION]!",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What types of clothes or accessories are expected to be worn at work?",
+    "ground_truth": "We don’t have specific expectations about what types of clothes or accessories you should wear.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What information must be included in a medical certification for leave due to an employee's own serious health condition?",
+    "ground_truth": "The probable duration of the condition, the healthcare provider's estimate of the amount of time needed for family care, and the healthcare provider's assurance that the healthcare condition warrants the participation of the employee to provide family care.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "Can someone force you into resignation at our company?",
+    "ground_truth": "No",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "Who should be contacted if you believe your supervisor or manager has pressured you not to take rest periods or meal breaks?",
+    "ground_truth": "Human Resources Department or a designated member of senior management",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What are the legal consequences of adopting certain policies in an employee handbook?",
+    "ground_truth": "The adoption of certain policies may impair the 'employment at-will' relationship and result instead in an implied contract that employees may be terminated only for good cause.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "When do employees become eligible for dental, vision, and health insurance plans?",
+    "ground_truth": "the first day of the month following 30 days of full-time employment",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What are the eligibility criteria for family care, medical, and military family leave?",
+    "ground_truth": "An employee must have worked for [ORGANIZATION] for at least twelve months prior to the date on which the leave is to commence; have worked at least 1,250 hours in the twelve (12) months preceding the leave; and work at a location with 50 employees or more within a 75-mile radius of [ORGANIZATION]'s next closest facility.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "Does [ORGANIZATION] continue to pay for an employee's participation in group health plans during family care, medical, and military family leave?",
+    "ground_truth": "Yes",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What happens to an employee's vacation accruals once they reach the cap?",
+    "ground_truth": "All further accruals will cease.",
+    "question_type": "simple_factual"
+  },
+  {
+    "question": "What is the frequency at which managers are expected to meet with their team members to provide feedback and discuss work and motivations, according to the company's policies?",
+    "ground_truth": "Once per week",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What is the likelihood that an employee who has completed the six-week training program will be able to work remotely on a business trip, considering the requirements for expense reports and password changes?",
+    "ground_truth": "Highly likely. Since employees have completed the six-week training program, they have passed the final assessment with a minimum score of 80 percent. This suggests that they are well-equipped to handle remote work and submit expense reports within the required 14 days. Additionally, their passwords will be changed every 90 days, ensuring secure access to company resources while working remotely.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "If you are an exempt employee, what would happen if you worked on a holiday?",
+    "ground_truth": "You would receive your normal compensation without any deductions (holiday pay) and also be granted an additional day of PTO that you must take within 12 months after that holiday.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What would happen if an employee failed to notify their [TITLE] of changes in their personnel data, such as a new dependent, while they were already being investigated for harassment?",
+    "ground_truth": "The employee could be excluded from further consideration for employment or terminated from their job, as per the policy stated in Snippet 1, which emphasizes the importance of accurate and current personnel data. This consequence is separate from any potential violation of anti-harassment policies, as discussed in Snippet 2.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What was the key innovation that allowed the Transformer model to outperform previous state-of-the-art models in machine translation tasks?",
+    "ground_truth": "The key innovation was the use of self-attention mechanisms, which replaced recurrence and convolutions entirely, allowing for parallelization and faster training times.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What are some examples of unofficial adverse actions that an employer might take to force an employee to resign, as mentioned in Snippet 1?",
+    "ground_truth": "According to Snippet 2, examples of unofficial adverse actions include demotions or increased workload, which could be used to coerce an employee into resigning.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What is the minimum score required to pass the final assessment of NovaTech Solutions' six-week training program, considering that new employees complete this program as part of their onboarding process?",
+    "ground_truth": "The minimum score required to pass the final assessment is 80 percent.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What should you do if you witness an incident of severe physical violence (e.g. one that involves a lethal weapon) in the workplace?",
+    "ground_truth": "You should call our building's security, but avoid getting involved for your safety, and then report the incident to HR as soon as possible.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What happens if an employee's company-issued equipment breaks or malfunctions on a holiday when the company doesn't operate?",
+    "ground_truth": "According to the policy, if your equipment breaks or malfunctions, let us know so we can arrange to get it repaired. If a holiday falls on a day when our company doesn’t operate (e.g. Sunday), we will observe that holiday on the closest business day.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "What would happen if an employee with substance addiction engages in violent behavior at work?",
+    "ground_truth": "According to the Employee Code of Conduct, such behavior would not be tolerated and the employee would face disciplinary action.",
+    "question_type": "multi_hop"
+  },
+  {
+    "question": "How do companies handle employee absences for religious holidays versus other types of leave?",
+    "ground_truth": "While both snippets mention employee absences, they differ in their approach. Snippet A focuses on company-provided holidays and unpaid time off for observing religious holidays, whereas Snippet B discusses reasonable accommodations under California law, including pregnancy-related disability leaves and bereavement leaves. The two scenarios have distinct rules and requirements.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "How do hiring processes and benefits administration differ between Snippet A (recruitment process) and Snippet B (employee benefits)?",
+    "ground_truth": "While both snippets discuss employee-related matters, the primary focus of Snippet A is on the recruitment process, including screening, interviewing, and selecting candidates. In contrast, Snippet B focuses on providing a range of benefits to eligible employees, including workers' compensation insurance coverage. The two processes have distinct goals and procedures.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "What are the main differences between the policies described in Snippet A (Workplace policies) and those mentioned in Snippet B (Non-exempt employees' meal periods)?",
+    "ground_truth": "The main difference is that Snippet A focuses on general workplace policies, including attendance and confidentiality, whereas Snippet B specifically addresses non-exempt employees' meal periods, including rules for taking breaks and relieving duties during that time.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "What are the two main entities that employees should contact in case of workplace issues?",
+    "ground_truth": "HR (for reporting harassment, violence, or other incidents) and building's security (only for severe physical violence involving a lethal weapon)",
+    "question_type": "comparison"
+  },
+  {
+    "question": "How do corporate policies regarding phone use compare to those governing email usage?",
+    "ground_truth": "While both policies emphasize responsible use, phone use policies are more restrictive, prohibiting certain activities (e.g., gaming, recording confidential info) and restricting usage in specific areas (e.g., laboratories), whereas email policies allow for some personal use as long as it's kept safe and doesn't compromise work or confidentiality.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "How do the concepts of 'family member' and 'employee' relate to each other in Snippet A, compared to how the Transformer model relates to its input and output representations in Snippet B?",
+    "ground_truth": "While both snippets define specific roles or entities (family members vs. employee), they differ fundamentally in their scope and purpose. In Snippet A, family members are defined as individuals with a biological or legal connection to an employee, whereas the Transformer model is a machine learning architecture that processes input and output representations without relying on sequence-aligned RNNs or convolution.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "What are some common guidelines or restrictions mentioned in both Snippet A (Corporate Email) and Snippet B (Leave's Effect on Benefits)?",
+    "ground_truth": "Both snippets mention restrictions on personal use, such as avoiding spamming and disclosing confidential information (Snippet A), and requiring employees to continue paying their share of health plan premiums during leave (Snippet B). Additionally, both snippets emphasize the importance of maintaining confidentiality and following company policies.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "How do the requirements for paid sick leave in Snippet A compare to the company's policies on employment of relatives in Snippet B?",
+    "ground_truth": "While both snippets discuss employee-related matters, they differ significantly. The first snippet focuses on providing a minimum amount of paid sick leave, whereas the second snippet outlines restrictions on hiring employees' relatives to prevent nepotism and favoritism.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "How do the two snippets discuss employee leave and workplace policies?",
+    "ground_truth": "While Snippet A discusses specific laws and regulations regarding bereavement leave and drug-free workplaces, Snippet B focuses on revising and updating company policies to ensure fairness and equal opportunity. The two snippets differ in their scope and tone, with Snippet A providing legal requirements and Snippet B outlining internal policy changes.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "How do [ORGANIZATION] and [Company’s name] approach discrimination and equal opportunity employment?",
+    "ground_truth": "Both [ORGANIZATION] and [Company’s name] prohibit discrimination against employees, with [ORGANIZATION] specifically mentioning non-retaliation and [Company’s name] emphasizing equal opportunity employer status. While [ORGANIZATION] focuses on workers’ compensation insurance and paid sick leave, [Company’s name] highlights inclusive practices such as hiring based on skills, making accommodations for people with disabilities, and using diversity-sensitive language.",
+    "question_type": "comparison"
+  },
+  {
+    "question": "What is the current stock price and financial forecast of Nvidia for the next quarter?",
+    "ground_truth": "I am sorry, but the provided documents do not contain information to answer this question.",
+    "question_type": "out_of_scope"
+  },
+  {
+    "question": "How does quantum computing affect modern RAG search engines?",
+    "ground_truth": "I am sorry, but the provided documents do not contain information to answer this question.",
+    "question_type": "out_of_scope"
+  },
+  {
+    "question": "What are the specific recipes for baking an authentic sourdough bread at high altitudes?",
+    "ground_truth": "I am sorry, but the provided documents do not contain information to answer this question.",
+    "question_type": "out_of_scope"
+  },
+  {
+    "question": "Can you explain the historical causes of the Peloponnesian War in ancient Greece?",
+    "ground_truth": "I am sorry, but the provided documents do not contain information to answer this question.",
+    "question_type": "out_of_scope"
+  },
+  {
+    "question": "Explain the steps to replace a transmission fluid in a 2018 Honda Civic.",
+    "ground_truth": "I am sorry, but the provided documents do not contain information to answer this question.",
+    "question_type": "out_of_scope"
+  },
+  {
+    "question": "What does 'non-exempt employees' refer to in the context of employee compensation and benefits?",
+    "ground_truth": "In this context, non-exempt employees are those who are entitled to overtime pay and other labor protections under federal or state laws. They are typically hourly workers, as opposed to exempt employees who are salaried and not eligible for overtime pay.",
+    "question_type": "terminology"
+  },
+  {
+    "question": "What does it mean when an organization 'observes' a holiday that falls on a Saturday or Sunday?",
+    "ground_truth": "When an organization observes a holiday that falls on a Saturday or Sunday, it means they will treat the preceding day as the actual holiday, rather than the weekend date. For example, if Christmas Day (December 25) falls on a Sunday, the organization would observe it by giving employees the Monday (December 24) off with pay.",
+    "question_type": "terminology"
+  },
+  {
+    "question": "What is the purpose of reporting accidents that result in injury to the [TITLE]?",
+    "ground_truth": "The correct answer is that such reports are necessary to comply with laws and initiate insurance and workers’ compensation benefits procedures.",
+    "question_type": "terminology"
+  },
+  {
+    "question": "What does 'performance review' refer to in the context of employee management?",
+    "ground_truth": "A performance review is a regular evaluation process where managers assess and discuss an employee's job performance, goals, and objectives with them.",
+    "question_type": "terminology"
+  }
+]
